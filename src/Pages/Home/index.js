@@ -1,18 +1,43 @@
+import {useEffect, useState} from "react";
+// import axios from "axios";
+
+import Story from '~/components/Story';
+import Posts from '~/components/Posts';
+import { Row} from 'react-bootstrap';
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 const cx = classNames.bind(styles);
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-// import faCoffee from '@fortawesome/fontawesome-free-solid/faCoffee';
+/* <FontAwesomeIcon icon={faHeart} /> */
+
 
 
 function Home() {
+    
+    const [post, setpost] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:3000/posts`)
+            .then((res) => res.json())
+            .then((res) =>{
+                // console.log(res);
+                setpost(res);
+            });
+    },[]);
+    
+    // console.log(post);
+  
     return ( 
-        <h2>
-            <FontAwesomeIcon icon={faHome} />
-            {/* <i class="fa-solid fa-user"></i> */}
-            Home pageeeeeeeeeeeeeee
-        </h2> 
+
+        <Row>
+            <>
+                <Story/>
+            </>
+            <>
+                {post.map((result) =>(
+                    <Posts key={result.postID} data={result}/>
+                ))}
+            </>
+                
+        </Row>
     );
 }
 

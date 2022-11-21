@@ -1,5 +1,25 @@
-.ok{
-    color: rgb(144, 132, 132);
-    background-color: rgb(66, 80, 80);
-    width: 30%;
+.wrapper{
+    position: fixed;
+}
+
+.wrapper_info{
+    font-size: 10px;
+}
+
+.wrapper_info span{
+    color: rgba(0,0,0,0.5);
+}
+
+.wrapper_info .wrapper_info__contacts .contacts{
+    font-size: 12px;
+    padding: 2px;
+}
+
+.wrapper_info .wrapper_info__contacts .contacts:hover{
+    text-decoration: underline;
+    color: rgba(0,0,0,0.5);
+}
+
+.wrapper_info__contacts{
+    margin-bottom: 10px;
 }

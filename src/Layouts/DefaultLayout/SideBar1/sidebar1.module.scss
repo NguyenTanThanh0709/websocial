@@ -1,6 +1,36 @@
-.ok{
-    color: red;
-    width:  20%;
-    background-color: rgb(137, 117, 117);
+.wrapper{
+    position: fixed;
+    height: 100%;
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
 
+.logo-link{
+    width: 145px;
+    height: 70px;
+    margin-right: 40px;
+    object-fit: contain;
+}
+
+.content_logo{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+ul li span{
+    margin-left: 15px;
+}
+
+ul{
+    padding-left: 0;
+}
+
+.wrapper ul li i{
+    font-size: 20px;
+}
+
+.current_user_avt {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
 }

@@ -1,0 +1,87 @@
+.container .carousel{
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  height: 80px;
+}
+
+.wrapper{
+  padding-left: 22px !important;
+  padding-right: 3px !important;
+  margin-top: 10px !important;
+}
+
+.container{
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.container .carousel::-webkit-scrollbar{
+  display: none;
+}
+
+
+.container .carousel .item{
+  background-color: #ffff;
+  margin: 10px;
+  padding: 10px;
+  width: 109px;
+
+}
+
+.container .carousel .item .image img{
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+  border-radius:50%;
+-moz-border-radius:50%;
+-webkit-border-radius:50%;
+}
+
+.container .carousel .item .info{
+  margin-top: 2px;
+  height: 60px;
+  display: flex;
+  width: 73px;
+  height: 16px;
+  font-size: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: rgba(0,0,0,0.7);
+  box-sizing: border-box;
+    display: block;
+    max-width: 70px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.container .carousel .item{
+  border-radius: 50%;
+}
+
+.buttons{
+  width: 100%;
+  text-align: center;
+}
+
+.buttons button img{
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+
+}
+
+.buttons button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+
+
+
