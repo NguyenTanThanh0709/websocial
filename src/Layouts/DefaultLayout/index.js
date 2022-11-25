@@ -2,6 +2,8 @@ import {Container, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SideBar1 from './SideBar1'
 import SideBar2 from './SideBar2'
+import Header1 from './Header1';
+import Header2 from './Header2';
 import classNames from 'classnames/bind';
 import styles from './DefaultLayout.module.scss';
 const cx = classNames.bind(styles);
@@ -13,11 +15,15 @@ function DefaultLayout({children}) {
             <Row>
 
     
-                <Col xs={12} md={3} lg={3}>
+                <Col className={cx('d-none', 'd-md-block')} md={3} lg={3}>
                     <SideBar1 />
                 </Col>
 
-                <Col xs={12} md={9} lg={6}>
+                <Col className={cx('d-block', 'd-md-none')} xs={12} >
+                    <Header1/>
+                </Col>
+
+                <Col className={cx('body')} xs={12} md={9} lg={6}>
                     <div className={cx('main-content')}>
                         {
                             children
@@ -25,6 +31,10 @@ function DefaultLayout({children}) {
                     </div>
                 </Col>
 
+                <Col className={cx('d-block', 'd-md-none')} xs={12} >
+                        <Header2/>
+                </Col>
+            
                 <Col className={cx('d-none', 'd-lg-block')} lg={3}>
                     <SideBar2/>
                 </Col>

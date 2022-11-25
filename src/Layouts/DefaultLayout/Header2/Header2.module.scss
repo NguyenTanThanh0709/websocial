@@ -1,0 +1,25 @@
+.wrapper{
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    z-index: 10;
+    bottom: 0;
+    height: 60px;
+    justify-content: space-between;
+    width: 100%;
+    right: 0px;
+    left: 0px;
+    border-top: 1px solid rgba(0,0,0,0.3);
+}
+
+.current_user_avt {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
