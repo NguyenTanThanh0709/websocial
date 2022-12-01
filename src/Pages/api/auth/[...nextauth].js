@@ -9,15 +9,12 @@ export default NextAuth({
         }),
         // ...add more providers here
     ],
-    src: {
-        signIn: "/auth/signin",
-    }
 
-    // callbacks: {
-    //     async session({ session, token, user }) {
-    //         (session.user.username = session.user.email.split("@")[0]),
-    //             (session.user.uid = token.sub);
-    //         return session;
-    //     },
-    // },
+    callbacks: {
+        async session({ session, token, user }) {
+            (session.user.username = session.user.email.split("@")[0]),
+                (session.user.uid = token.sub);
+            return session;
+        },
+    },
 });
