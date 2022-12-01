@@ -1,0 +1,38 @@
+.wrapper{
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.body{
+    flex: 1;
+    margin: 5px 10px;
+}
+
+.wrapper div .h2{
+    font-size: 14px;
+}
+
+.body span{
+    display: block  ;
+}
+
+.wrapper div .h3{
+    font-size: 11px;
+    color: rgba(0,0,0,0.6);
+}
+
+.wrapper Button{
+    font-size: 17px;
+    padding-left: 20px;
+    color: rgb(28, 82, 206);
+}

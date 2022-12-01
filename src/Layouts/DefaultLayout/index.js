@@ -23,7 +23,7 @@ function DefaultLayout({children}) {
                     <Header1/>
                 </Col>
 
-                <Col className={cx('body')} xs={12} md={9} lg={6}>
+                <Col className={cx('body')} xs={12} md={9} lg={5}>
                     <div className={cx('main-content')}>
                         {
                             children
@@ -35,7 +35,7 @@ function DefaultLayout({children}) {
                         <Header2/>
                 </Col>
             
-                <Col className={cx('d-none', 'd-lg-block')} lg={3}>
+                <Col className={cx('d-none', 'd-lg-block')} lg={4}>
                     <SideBar2/>
                 </Col>
             </Row>

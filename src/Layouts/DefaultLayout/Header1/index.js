@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import images from '~/assets/images';
 import styles from './Header1.module.scss';
 import classNames from 'classnames/bind';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 
 function Header1() {
+    const [heart, setHeart] = useState(false);
     return ( 
         <div className={cx('wrapper')}>
             <div className={cx('logo')}>
@@ -16,15 +18,12 @@ function Header1() {
                 </Link>
             </div>
 
-            <div className={cx('input')}>
-                <div>
-                    <i  className={cx('fa-solid','fa-magnifying-glass', 'icon_search')} ></i>
-                    <input className={cx('input_search')} placeholder='search something'></input>
-                </div>
-            </div>
+            
 
-            <div className={cx('heart')}>
-                <i  className={cx('fa-regular','fa-heart')}></i>
+            <div className={cx('heart')}  onClick={(e) => setHeart(!heart)}>
+                <div className={cx(`${heart ? 'red' : null}`)}>
+                <i   className={cx('fa-regular','fa-heart')} ></i>
+                </div>
             </div>
         </div>
      );

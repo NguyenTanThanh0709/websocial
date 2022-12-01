@@ -1,9 +1,14 @@
 .wrapper{
     position: fixed;
+    margin-top: 5px;
+    margin-left: 30px;
 }
+
+
 
 .wrapper_info{
     font-size: 10px;
+    margin-top: 30px;
 }
 
 .wrapper_info span{
@@ -22,4 +27,16 @@
 
 .wrapper_info__contacts{
     margin-bottom: 10px;
+}
+
+.color{
+    color: rgb(28, 82, 206);
+    padding-right: 11px;
+}
+
+.wrapper_suggestions{
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
 }

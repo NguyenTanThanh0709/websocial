@@ -1,3 +1,6 @@
+import MiniProfile from '~/components/MiniProfile';
+import Main from '~/components/Main';
+import {useEffect, useState} from "react";
 
 
 import classNames from 'classnames/bind';
@@ -5,14 +8,49 @@ import styles from './sidebar2.module.scss';
 const cx = classNames.bind(styles);
 
 function SideBar2() {
+
+    const [userMain, setuserMain] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:3001/users?userId=1`)
+            .then((res) => res.json())
+            .then((res) =>{
+                // console.log(res);
+                setuserMain(res);
+            });
+    },[]);
+
+
+    const [user, setuser] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:3001/users?_limit=5`)
+            .then((res) => res.json())
+            .then((res) =>{
+                // console.log(res);
+                setuser(res);
+            });
+    },[]);
+    
     return ( 
         <div className={cx('wrapper')}>
                 <div className={cx('wrapper_profile')}>
-
+                    {
+                        userMain.map((result) =>(
+                            <Main key={result.userId} data={result}  />
+                        ))
+                    }
                 </div >
 
                 <div className={cx('wrapper_suggestions')}>
-                    
+                    <span>Suggestions for you</span>
+                    <span  className={cx('color')}>See all</span>
+                </div>
+
+                <div>
+                    {
+                        user.map((result) =>(
+                            <MiniProfile key={result.userId} data={result}  />
+                        ))
+                    }
                 </div>
 
                 <div className={cx('wrapper_info')}>

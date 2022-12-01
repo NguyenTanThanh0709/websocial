@@ -13,6 +13,7 @@ function LoginLayout({ children }) {
                 <Col>
                     <div className={cx('content')}>
                         {children}
+                        
                     </div>
                 </Col>
             </Row>

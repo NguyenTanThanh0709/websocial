@@ -33,19 +33,6 @@ function Header2() {
             </li>
 
             <li>
-                    <Button to={config.routes.home } text disabled>
-                <i  className={cx('fa-brands','fa-facebook-messenger')} ></i>
-                    
-                    </Button>
-            </li>
-
-            <li>
-                    <Button to={config.routes.home} text disabled>
-                        <i  className={cx('fa-regular','fa-heart')} ></i>
-                    </Button>
-                </li>
-
-            <li>
             <Button to={config.routes.profile} text>
                         {currentUser ? 
                         (
