@@ -75,7 +75,7 @@ function Search() {
 
                 {
                     post.map((result) =>(
-                        <Posts key={result.postID} data={result}/>
+                        <Posts key={result.id} data={result}/>
                     ))
                 }
             </>

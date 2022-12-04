@@ -7,7 +7,11 @@ const cx = classNames.bind(styles);
 
 function Posts({ data } ) {
     const[show,setShow]=useState(false);
+    // const[showcmt,setShowcmt]=useState(false);
     const[showSAVE,setShowSAVE]=useState(false);
+
+ 
+
     return ( 
 
         <Col xs={12} md={12} lg={12} >
@@ -23,7 +27,6 @@ function Posts({ data } ) {
                     </div>
                     
                     <Carousel>
-
                         {
                             data.images.map((result, index) => (
                                 <Carousel.Item key={index}>
@@ -75,15 +78,29 @@ function Posts({ data } ) {
                             </span>
                         </div>
 
+                        <div className={cx('body__comments')}>
+                        
+                        {
+                            data.comments.map((result, index) => (
+                                <div key={index}>
+                                    <strong>Some one</strong>
+                                    <span>{result}</span>
+                                </div>
+                            ))
+                        }
+                            
+                        </div>
+
                         <div className={cx('content_post')}>
                             <div className={cx('content_post__item')}>
                                 <a className={cx('icon')} href="/#" onClick={(e) => e.preventDefault()}>
                                     <i className={cx('fa-regular','fa-face-laugh-wink')}></i>
                                 </a>
                                 <input placeholder='Add a comment...'></input>
-                                <a href="/#" onClick={(e) => e.preventDefault()}>
+                                <input type='hidden' value={data.id} id='id'/>
+                                <span href="/#" >
                                     <span>Post</span>
-                                </a>
+                                </span>
                             </div>
                         </div>
 

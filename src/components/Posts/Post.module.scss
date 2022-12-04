@@ -59,6 +59,24 @@
     border: none;
 }
 
+.body__comments div{
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+}
+
+.body__comments div i{
+    cursor: pointer;
+}
+
+.body__comments Strong{
+    margin-right: 12px;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .body_icon .icon_2 button{
     padding-right: 16px;
     outline: none;
@@ -132,11 +150,12 @@ span.count_like{
     color: rgba(0,0,0,0.5)
 }
 
-.content_post div a i{
+.content_post div  i{
     color: black;
 }
 
 .content_post .content_post__item span{
+    cursor: pointer;
     font-size: 14px;
     width: 20%;
 }

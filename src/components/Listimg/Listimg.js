@@ -21,7 +21,7 @@ function Listimg() {
     <>
         <div className={cx('')} >
         {img.map((result) =>(
-                    <Item key={result.imageId} data={result}/>
+                    <Item key={result.id} data={result}/>
                 ))}
         </div>
     </> 

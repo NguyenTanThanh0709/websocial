@@ -10,6 +10,9 @@ const cx = classNames.bind(styles);
 
 
 function Main({data}) {
+    function handleClick(){
+        localStorage.removeItem('user-info');
+    }
     return ( 
         <div className={cx('wrapper')}>
             <img className={cx('img')} src={data.avatar} alt='avt'/>
@@ -18,7 +21,7 @@ function Main({data}) {
                 <span className={cx('h3')}>Welcom to my profile</span>
             </div>
 
-            <Button to={config.routes.login} style={{padding: "0 0 0 37px"}}>
+            <Button onClick={handleClick} to={config.routes.login}  style={{padding: "0 0 0 37px"}}>
                 Log out
             </Button>
         </div>

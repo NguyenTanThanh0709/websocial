@@ -1,11 +1,10 @@
 const routes = {
-    home: '/',
+    home: '/home',
     explore: '/explore',
     upload: '/upload',
     video: '/video',
     search: '/search',
-    login: '/login',
-    signIn: '/auth/signin',
+    login: '/',
 };
 
 export default routes;

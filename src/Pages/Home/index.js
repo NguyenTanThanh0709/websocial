@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+// import LazyLoad from 'react-lazyload'
 // import axios from "axios";
 
 import Story from '~/components/Story';
@@ -31,7 +32,7 @@ function Home() {
             </>
             <>
                 {post.map((result) =>(
-                    <Posts key={result.postID} data={result}/>
+                    <Posts key={result.id} data={result}/>
                 ))}
             </>
                 

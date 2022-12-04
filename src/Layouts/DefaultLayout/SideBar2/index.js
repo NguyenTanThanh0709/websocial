@@ -5,13 +5,17 @@ import {useEffect, useState} from "react";
 
 import classNames from 'classnames/bind';
 import styles from './sidebar2.module.scss';
+import { json } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function SideBar2() {
 
+    var name = JSON.parse(localStorage.getItem('user-info'));
+    var idMain = name.id;
+
     const [userMain, setuserMain] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3001/users?userId=1`)
+        fetch(`http://localhost:3001/users?id=${idMain}`)
             .then((res) => res.json())
             .then((res) =>{
                 // console.log(res);
@@ -29,13 +33,16 @@ function SideBar2() {
                 setuser(res);
             });
     },[]);
+
+    
+
     
     return ( 
         <div className={cx('wrapper')}>
                 <div className={cx('wrapper_profile')}>
                     {
                         userMain.map((result) =>(
-                            <Main key={result.userId} data={result}  />
+                            <Main key={result.id} data={result}  />
                         ))
                     }
                 </div >
@@ -48,7 +55,7 @@ function SideBar2() {
                 <div>
                     {
                         user.map((result) =>(
-                            <MiniProfile key={result.userId} data={result}  />
+                            <MiniProfile key={result.id} data={result}  />
                         ))
                     }
                 </div>

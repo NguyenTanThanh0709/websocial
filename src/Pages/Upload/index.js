@@ -4,22 +4,19 @@ import Form from 'react-bootstrap/Form';
 function Upload() {
 
       const handleClick = () =>{
-        let name1 = document.querySelector("#name").value;
+        var name = JSON.parse(localStorage.getItem('user-info'));
+        var name1 = name.username;
+        let avatar1 = name.avatar;
         let title = document.querySelector("#title").value;
-        let status1 = document.querySelector("#status").value;
+        let status1 = " ";
         let description1 = document.querySelector("#description").value;
         let image1 = document.querySelector("#image").value;
 
+
         
-        if(name1 === ''){
-            name1 = "Vô danh";
-        }
+        
         if(title === ''){
             title = "chưa có gì";
-        }
-
-        if(status1 === ''){
-            status1 = "vài thứ lung tung";
         }
 
         if(description1 === ''){
@@ -29,14 +26,15 @@ function Upload() {
         const post = {
                         name : name1,
                         title1 :title,
-                        avatar: "https://phunugioi.com/wp-content/uploads/2020/10/anh-dai-dien-avt-anime-1.jpg",
+                        avatar: avatar1,
                         title : status1,
                         description : description1,
                         images :[image1],
                         like:0,
-                        comments:[]
+                        comments:["no comment"]
         }
         console.log(post);
+        console.log(typeof(post));
         if(image1 !== ''){
                     try {
                        fetch('http://localhost:3001/posts',{
@@ -44,7 +42,7 @@ function Upload() {
                         headers:{
                             'Content-Type': 'application/json'
                         },
-                        body:JSON.stringify({post})
+                        body:JSON.stringify(post)
                        })
                        .then(data => data.json())
                     } catch (e) {
@@ -56,20 +54,12 @@ function Upload() {
 
     return ( 
     <Form>
-        <Form.Group className="mb-3" >
-            <Form.Label>Name</Form.Label>
-            <Form.Control required id="name" type="text"  placeholder="Enter name" />
-        </Form.Group>
-
+        
         <Form.Group className="mb-3" >
             <Form.Label>Tiitle</Form.Label>
             <Form.Control required id="title" type="text"  placeholder="Enter title"  />
         </Form.Group>
 
-        <Form.Group className="mb-3" >
-            <Form.Label>Status</Form.Label>
-            <Form.Control required id="status" type="text"  placeholder="Enter status" />
-        </Form.Group>
 
         <Form.Group className="mb-3" >
             <Form.Label>Description</Form.Label>
@@ -78,7 +68,7 @@ function Upload() {
 
         <Form.Group className="mb-3" >
             <Form.Label>Image</Form.Label>
-            <Form.Control required id="image" type="text"  placeholder="Enter image" />
+            <Form.Control required id="image" type="text"  placeholder="Enter image url" />
         </Form.Group>
 
         <Button variant="primary" type="button" onClick ={()=>{

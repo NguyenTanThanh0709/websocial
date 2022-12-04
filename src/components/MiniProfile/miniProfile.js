@@ -18,7 +18,7 @@ function MiniProfile({data}) {
                 <span className={cx('h3')}>{data.trietLy}</span>
             </div>
 
-            <Button to={config.routes.login} style={{padding: "0 0 0 37px"}}>
+            <Button  style={{padding: "0 0 0 37px"}}>
                 Follow
             </Button>
         </div>
