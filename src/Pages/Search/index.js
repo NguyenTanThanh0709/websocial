@@ -1,5 +1,7 @@
 import {useEffect, useState, useRef} from "react";
 import React from "react";
+import LazyLoad from 'react-lazy-load';
+
 // import axios from "axios";
 
 import Posts from '~/components/Posts';
@@ -75,7 +77,11 @@ function Search() {
 
                 {
                     post.map((result) =>(
+                        <LazyLoad key={result.id}
+                    height={810}  threshold={0.45}  once
+                     >
                         <Posts key={result.id} data={result}/>
+                    </LazyLoad>
                     ))
                 }
             </>

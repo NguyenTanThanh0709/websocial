@@ -1,4 +1,4 @@
-import { useState, useRef,useEffect} from "react";
+import { useState} from "react";
 
 import classNames from 'classnames/bind';
 import styles from './Video.module.scss';

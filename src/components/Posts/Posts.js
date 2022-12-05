@@ -1,5 +1,6 @@
 import { useState} from "react";
 import { Col,Card, Carousel} from 'react-bootstrap';
+// import $ from 'jquery';
 import classNames from 'classnames/bind';
 import styles from './Post.module.scss';
 const cx = classNames.bind(styles);
@@ -9,9 +10,27 @@ function Posts({ data } ) {
     const[show,setShow]=useState(false);
     // const[showcmt,setShowcmt]=useState(false);
     const[showSAVE,setShowSAVE]=useState(false);
-
- 
-
+    // const [post,setpost] = useState({});
+    // var cmtnew = "";
+    // const handle = event => {
+    //     let id = event.target.dataset.user;
+    //     let cmt = document.getElementById(id).value;
+    //     let url = `http://localhost:3001/posts?id=${id}`;
+    //     fetch(url)
+    //         .then((res) => res.json())
+    //         .then((res) =>{
+    //             // console.log(res);
+    //             setpost(res);
+    //         });
+    //         cmtnew = post[0]['comments']
+    //         // console.log(cmtnew)
+    //         cmtnew.push(cmt)
+            
+    //   }
+    //   post[0]['comments'] = cmtnew
+    //   console.log(post[0]);
+    
+      
     return ( 
 
         <Col xs={12} md={12} lg={12} >
@@ -96,10 +115,11 @@ function Posts({ data } ) {
                                 <a className={cx('icon')} href="/#" onClick={(e) => e.preventDefault()}>
                                     <i className={cx('fa-regular','fa-face-laugh-wink')}></i>
                                 </a>
-                                <input placeholder='Add a comment...'></input>
-                                <input type='hidden' value={data.id} id='id'/>
-                                <span href="/#" >
-                                    <span>Post</span>
+                                <input id={data.id} placeholder='Add a comment...'></input>
+                                
+                                <span data-user={data.id}  >
+                                    
+                                    Post
                                 </span>
                             </div>
                         </div>

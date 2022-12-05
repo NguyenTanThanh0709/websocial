@@ -1,5 +1,5 @@
 import Button from '~/components/Button';
-import config from '~/config';
+// import config from '~/config';
 // import { signOut  } from "next-auth/react";
 
 
@@ -19,7 +19,7 @@ function MiniProfile({data}) {
             </div>
 
             <Button  style={{padding: "0 0 0 37px"}}>
-                Follow
+                See
             </Button>
         </div>
      );

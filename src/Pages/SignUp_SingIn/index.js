@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { json, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import {  useNavigate } from 'react-router-dom';
 import {
   MDBContainer,
   MDBTabs,
@@ -13,9 +13,6 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
-import Item from '~/components/Story/Item';
-
-
 
 function SignUp_SingIn() {
     const [justifyActive, setJustifyActive] = useState('tab1');
@@ -139,7 +136,10 @@ function SignUp_SingIn() {
               </MDBBtn>
             </div>
 
-            <p className="text-center mt-3">or:</p>
+            <p className="text-center mt-3">or:<br/>
+              <span>Username: </span><strong>admin</strong><br/>
+              <span>Password: </span><strong>1234567</strong>
+            </p>
           </div>
 
           <MDBInput wrapperClass='mb-4' label='Username' id='form1' type='text' onChange={(e)=>setUsername(e.target.value)}/>

@@ -1,9 +1,17 @@
 import Item from './Item';
 import {useEffect, useState} from "react";
+import LazyLoad from 'react-lazy-load';
+
 
 import classNames from 'classnames/bind';
 import styles from './Listimg.module.scss';
 const cx = classNames.bind(styles);
+
+const Loading = () => (
+    
+      <h1 >Loading...</h1>
+    
+  )
 
 function Listimg() {
 
@@ -21,7 +29,13 @@ function Listimg() {
     <>
         <div className={cx('')} >
         {img.map((result) =>(
-                    <Item key={result.id} data={result}/>
+                    
+                <LazyLoad
+                key={result.id}
+                height={300}  threshold={0.95}  once placeholder={<Loading />}
+                >
+                <Item key={result.id} data={result}/>
+                </LazyLoad>
                 ))}
         </div>
     </> 

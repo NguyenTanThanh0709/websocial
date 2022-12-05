@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 // import LazyLoad from 'react-lazyload'
+import LazyLoad from 'react-lazy-load';
 // import axios from "axios";
 
 import Story from '~/components/Story';
@@ -32,7 +33,11 @@ function Home() {
             </>
             <>
                 {post.map((result) =>(
-                    <Posts key={result.id} data={result}/>
+                    <LazyLoad key={result.id}
+                    height={810}  threshold={0.3}  once
+                     >
+                        <Posts key={result.id} data={result}/>
+                    </LazyLoad>
                 ))}
             </>
                 

@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 
 import classNames from 'classnames/bind';
 import styles from './sidebar2.module.scss';
-import { json } from 'react-router-dom';
+// import { json } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function SideBar2() {

@@ -31,7 +31,7 @@ function Upload() {
                         description : description1,
                         images :[image1],
                         like:0,
-                        comments:["no comment"]
+                        comments:[""]
         }
         console.log(post);
         console.log(typeof(post));
@@ -57,18 +57,18 @@ function Upload() {
         
         <Form.Group className="mb-3" >
             <Form.Label>Tiitle</Form.Label>
-            <Form.Control required id="title" type="text"  placeholder="Enter title"  />
+            <Form.Control id="title" type="text"  placeholder="Enter title"  />
         </Form.Group>
 
 
         <Form.Group className="mb-3" >
             <Form.Label>Description</Form.Label>
-            <Form.Control required id="description" type="text"  placeholder="Enter description" />
+            <Form.Control id="description" type="text"  placeholder="Enter description" />
         </Form.Group>
 
         <Form.Group className="mb-3" >
             <Form.Label>Image</Form.Label>
-            <Form.Control required id="image" type="text"  placeholder="Enter image url" />
+            <Form.Control id="image" type="text"  placeholder="Enter image url" />
         </Form.Group>
 
         <Button variant="primary" type="button" onClick ={()=>{
