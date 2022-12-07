@@ -21,7 +21,7 @@ function SideBar2() {
                 // console.log(res);
                 setuserMain(res);
             });
-    },[]);
+    },[idMain]);
 
 
     const [user, setuser] = useState([]);

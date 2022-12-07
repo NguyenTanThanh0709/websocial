@@ -1,8 +1,8 @@
-// import { useEffect, useState, useMemo } from "react";
+import { useEffect, useMemo, useState, Fragment } from "react";
+
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { publicRoutes } from '~/routes';
 import {DefaultLayout} from '~/Layouts'
-import {Fragment} from 'react';
 
 function App() {
     return (
@@ -37,25 +37,26 @@ function App() {
     );
 }
 
-// export const useElementOnScreen = (options, targetRef) => {
-//     const [isVisibile, setIsVisible] = useState();
-//     const callbackFunction = (entries) => {
-//       const [entry] = entries; //const entry = entries[0]
-//       setIsVisible(entry.isIntersecting);
-//     };
-//     const optionsMemo = useMemo(() => {
-//       return options;
-//     }, [options]);
-//     useEffect(() => {
-//       const observer = new IntersectionObserver(callbackFunction, optionsMemo);
-//       const currentTarget = targetRef.current;
-//       if (currentTarget) observer.observe(currentTarget);
+export const useElementOnScreen = (options, targetRef) => {
+    const [isVisibile, setIsVisible] = useState();
+    const callbackFunction = (entries) => {
+      const [entry] = entries; //const entry = entries[0]
+      setIsVisible(entry.isIntersecting);
+    };
+    const optionsMemo = useMemo(() => {
+      return options;
+    }, [options]);
+    useEffect(() => {
+      const observer = new IntersectionObserver(callbackFunction, optionsMemo);
+      const currentTarget = targetRef.current;
+      if (currentTarget) observer.observe(currentTarget);
   
-//       return () => {
-//         if (currentTarget) observer.unobserve(currentTarget);
-//       };
-//     }, [targetRef, optionsMemo]);
-//     return isVisibile;
-//   };
+      return () => {
+        if (currentTarget) observer.unobserve(currentTarget);
+      };
+    }, [targetRef, optionsMemo]);
+    return isVisibile;
+  };
+  
 
 export default App;
