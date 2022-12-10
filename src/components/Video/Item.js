@@ -16,18 +16,18 @@ function Item({data}) {
 
     const videoRef = useRef();
     const [playing, setPlaying] = useState(false);
-    const handleVideo = () => {
-      if (playing) {
-        videoRef.current.pause();
-        setPlaying(false);
-      } else {
-        videoRef.current.play();
-        setPlaying(true);
-      }
-    };
+    // const handleVideo = () => {
+    //   if (playing) {
+    //     videoRef.current.pause();
+    //     setPlaying(false);
+    //   } else {
+    //     videoRef.current.play();
+    //     setPlaying(true);
+    //   }
+    // };
     const options = {
       root: null,
-      rootMargin: "0px",
+      rootMargin: "5px",
       threshold: 0.3,
     };
     const isVisibile = useElementOnScreen(options, videoRef);
@@ -66,7 +66,8 @@ function Item({data}) {
                     <div>
                     <video className={cx('video')} src = {data.src}
                         autoPlay loop ref={videoRef}
-                        onClick={handleVideo}
+                        muted={false}
+                        // onClick={handleVideo}
                     ></video>
                     <ul className={cx('ICON')}>
                         <li>
